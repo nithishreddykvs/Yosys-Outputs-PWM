@@ -1,0 +1,17 @@
+# Read the design file (NOT the testbench)
+read_verilog pwm.v
+
+# Set the top module name
+# (change 'pwm' if your top-level module inside pwm.v is named differently)
+hierarchy -top pwm
+
+# Synthesis steps
+proc; opt; fsm; opt; memory; opt
+
+# Optional: generate an SVG of the top-level module
+show -format svg -prefix pwm_netlist pwm
+
+# Output synthesized netlist in different formats
+write_json pwm_synth.json
+write_verilog pwm_synth.v
+write_blif pwm_synth.blif

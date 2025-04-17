@@ -1,0 +1,364 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "pwm": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "pwm.v:22.1-78.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "sw": {
+          "direction": "input",
+          "bits": [ 4, 5, 6 ]
+        },
+        "pwm_out": {
+          "direction": "output",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+        "$add$pwm.v:60$4": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "pwm.v:60.28-60.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8, 9, 10, 11 ],
+            "B": [ "1" ],
+            "Y": [ 12, 13, 14, 15 ]
+          }
+        },
+        "$auto$proc_rom.cc:150:do_switch$8": {
+          "hide_name": 1,
+          "type": "$mem_v2",
+          "parameters": {
+            "ABITS": "00000000000000000000000000000011",
+            "INIT": "10000111011001010100001100100001",
+            "MEMID": "$auto$proc_rom.cc:150:do_switch$8",
+            "OFFSET": "00000000000000000000000000000000",
+            "RD_ARST_VALUE": "xxxx",
+            "RD_CE_OVER_SRST": "0",
+            "RD_CLK_ENABLE": "0",
+            "RD_CLK_POLARITY": "1",
+            "RD_COLLISION_X_MASK": "0",
+            "RD_INIT_VALUE": "xxxx",
+            "RD_PORTS": "00000000000000000000000000000001",
+            "RD_SRST_VALUE": "xxxx",
+            "RD_TRANSPARENCY_MASK": "0",
+            "RD_WIDE_CONTINUATION": "0",
+            "SIZE": "00000000000000000000000000001000",
+            "WIDTH": "00000000000000000000000000000100",
+            "WR_CLK_ENABLE": "0",
+            "WR_CLK_POLARITY": "0",
+            "WR_PORTS": "00000000000000000000000000000000",
+            "WR_PRIORITY_MASK": "0",
+            "WR_WIDE_CONTINUATION": "0"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "pwm.v:38.13-48.20"
+          },
+          "port_directions": {
+            "RD_ADDR": "input",
+            "RD_ARST": "input",
+            "RD_CLK": "input",
+            "RD_DATA": "output",
+            "RD_EN": "input",
+            "RD_SRST": "input",
+            "WR_ADDR": "input",
+            "WR_CLK": "input",
+            "WR_DATA": "input",
+            "WR_EN": "input"
+          },
+          "connections": {
+            "RD_ADDR": [ 4, 5, 6 ],
+            "RD_ARST": [ "0" ],
+            "RD_CLK": [ "x" ],
+            "RD_DATA": [ 16, 17, 18, 19 ],
+            "RD_EN": [ "1" ],
+            "RD_SRST": [ "0" ],
+            "WR_ADDR": [ ],
+            "WR_CLK": [ ],
+            "WR_DATA": [ ],
+            "WR_EN": [ ]
+          }
+        },
+        "$eq$pwm.v:57$3": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "pwm.v:57.17-57.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8, 9, 10, 11 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 20 ]
+          }
+        },
+        "$lt$pwm.v:70$6": {
+          "hide_name": 1,
+          "type": "$lt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "pwm.v:70.17-70.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8, 9, 10, 11 ],
+            "B": [ 21, 22, 23, 24 ],
+            "Y": [ 25 ]
+          }
+        },
+        "$procdff$18": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "pwm.v:66.5-76.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 26 ],
+            "Q": [ 7 ]
+          }
+        },
+        "$procdff$19": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "pwm.v:53.5-63.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 27, 28, 29, 30 ],
+            "Q": [ 8, 9, 10, 11 ]
+          }
+        },
+        "$procdff$20": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "pwm.v:33.5-50.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 16, 17, 18, 19 ],
+            "Q": [ 21, 22, 23, 24 ]
+          }
+        },
+        "$procmux$12": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "pwm.v:70.17-70.37|pwm.v:70.13-74.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 25 ],
+            "Y": [ 26 ]
+          }
+        },
+        "$procmux$15": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "pwm.v:57.17-57.29|pwm.v:57.13-61.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 12, 13, 14, 15 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 20 ],
+            "Y": [ 27, 28, 29, 30 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\counter[3:0]": {
+          "hide_name": 1,
+          "bits": [ 27, 28, 29, 30 ],
+          "attributes": {
+            "src": "pwm.v:53.5-63.8"
+          }
+        },
+        "$0\\duty_cycle[3:0]": {
+          "hide_name": 1,
+          "bits": [ 16, 17, 18, 19 ],
+          "attributes": {
+            "src": "pwm.v:33.5-50.8"
+          }
+        },
+        "$0\\pwm_out[0:0]": {
+          "hide_name": 1,
+          "bits": [ 26 ],
+          "attributes": {
+            "src": "pwm.v:66.5-76.8"
+          }
+        },
+        "$add$pwm.v:60$4_Y": {
+          "hide_name": 1,
+          "bits": [ 12, 13, 14, 15 ],
+          "attributes": {
+          }
+        },
+        "$eq$pwm.v:57$3_Y": {
+          "hide_name": 1,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "pwm.v:57.17-57.29"
+          }
+        },
+        "$lt$pwm.v:70$6_Y": {
+          "hide_name": 1,
+          "bits": [ 25 ],
+          "attributes": {
+            "src": "pwm.v:70.17-70.37"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "pwm.v:23.11-23.14"
+          }
+        },
+        "counter": {
+          "hide_name": 0,
+          "bits": [ 8, 9, 10, 11 ],
+          "attributes": {
+            "src": "pwm.v:29.15-29.22"
+          }
+        },
+        "duty_cycle": {
+          "hide_name": 0,
+          "bits": [ 21, 22, 23, 24 ],
+          "attributes": {
+            "src": "pwm.v:30.15-30.25"
+          }
+        },
+        "pwm_out": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "pwm.v:26.16-26.23"
+          }
+        },
+        "rst": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "pwm.v:24.11-24.14"
+          }
+        },
+        "sw": {
+          "hide_name": 0,
+          "bits": [ 4, 5, 6 ],
+          "attributes": {
+            "src": "pwm.v:25.17-25.19"
+          }
+        }
+      }
+    }
+  }
+}
